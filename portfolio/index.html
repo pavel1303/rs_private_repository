@@ -6,23 +6,54 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Portfolio</title>
-   <link rel="stylesheet" href="style.css">
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Merriweather:wght@700&display=swap"
       rel="stylesheet">
    <link type="Image/x-icon" href="assets/favicon.ico" rel="icon">
+   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-   <header class="header">
-      <div class="container">
-
+   <header>
+      <div class="header__conteiner">
+         <div class="container">
+            <div class="header">
+               <div class="header__left">
+                  <a href="#">
+                     <svg class="logo">
+                        <use xlink:href="assets/svg/sprite.svg#logo"></use>
+                     </svg>
+                  </a>
+               </div>
+               <div class="header__right">
+                  <nav class="navigation">
+                     <ul>
+                        <li><a href="#">Skills</a></li>
+                        <li><a href="#">Portfolio</a></li>
+                        <li><a href="#">Video</a></li>
+                        <li><a href="#">Price</a></li>
+                        <li><a href="#">Contacts</a></li>
+                     </ul>
+                  </nav>
+                  <ul class="language">
+                     <li><a href="">en</a></li>
+                     <li>/</li>
+                     <li><a href="">ru</a></li>
+                  </ul>
+               </div>
+            </div>
+         </div>
       </div>
    </header>
    <main class="main">
       <div class="container">
-
+         <section class="hero"></section>
+         <section class="skills"></section>
+         <section class="portfolio"></section>
+         <section class="video"></section>
+         <section class="price"></section>
+         <section class="contacts"></section>
       </div>
    </main>
    <footer class="footer">
