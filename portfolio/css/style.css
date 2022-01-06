@@ -57,8 +57,9 @@ a:hover {
 
 .header {
    display: flex;
+   height: 90px;
    align-items: center;
-   padding: 19px 0 0 0;
+   padding: 4px 0 0 0;
 }
 
 .logo {
@@ -93,3 +94,40 @@ a:hover {
 }
 
 /* hero */
+
+.hero__container {
+   width: 1440px;
+   margin: 0 auto;
+   padding: 170px 0 330px 0;
+   background-image: url("../assets/img/bg-header.jpg");
+   background-position: center -90px;
+   background-repeat: no-repeat;
+}
+
+.hero__content {
+   width: 500px;
+   height: 330px;
+   margin-left: 60px;
+}
+
+.hero__content-h1 {
+   margin-bottom: 21px;
+   font-family: "Merriweather", serif;
+   font-size: 60px;
+   font-weight: bold;
+   line-height: 1.7;
+}
+.hero__content-p {
+   margin-bottom: 27px;
+   font-size: 20px;
+   line-height: 1.9;
+}
+.hero__content-btn {
+   width: 220px;
+   height: 55px;
+   background-color: var(--color-gold);
+}
+
+.hero__content-btn:hover {
+   color: var(--color-white);
+}
