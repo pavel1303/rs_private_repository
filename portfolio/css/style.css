@@ -122,13 +122,13 @@ a:hover {
    font-size: 20px;
    line-height: 1.9;
 }
-.hero__content-btn {
+.btn {
    width: 220px;
    height: 55px;
    background-color: var(--color-gold);
 }
 
-.hero__content-btn:hover {
+.btn:hover {
    color: var(--color-white);
 }
 
@@ -191,4 +191,38 @@ a:hover {
    width: 60px;
    height: 60px;
    fill: var(--color-gold);
+}
+
+/* portfolio */
+
+.portfolio {
+   padding-top: 121px;
+}
+
+.portfolio__btns {
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+   gap: 5px;
+   padding-top: 75px;
+}
+.portfolio__btns-item {
+   border: var(--color-gold) solid 2px;
+   background-color: var(--color-black);
+   color: var(--color-gold);
+}
+
+.portfolio__btns-item:hover {
+   color: var(--color-white);
+}
+
+.portfolio__gallary {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 25px;
+   padding-top: 60px;
+}
+.portfolio__gallary-item {
+   width: 450px;
+   height: 560px;
 }
