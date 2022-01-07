@@ -308,3 +308,67 @@ a:hover {
 .price__list-item .btn {
    margin-top: 47px;
 }
+
+/* contacts */
+
+.contacts {
+   padding-top: 100px;
+}
+
+.contacts__container {
+   display: flex;
+   justify-content: flex-end;
+   width: 1440px;
+   margin: 0 auto;
+   background: url("../assets/img/contacts.jpg");
+   background-size: auto 700px;
+   background-position: center center;
+}
+.contacts__container .container {
+   display: flex;
+   justify-content: flex-end;
+}
+.contacts__content {
+   display: flex;
+   flex-direction: column;
+   margin-bottom: 255px;
+   width: 450px;
+   height: 445px;
+}
+
+.contacts__content h2 {
+   padding-top: 60px;
+   padding-bottom: 18px;
+   font-family: "Merriweather", serif;
+   color: var(--color-gold);
+   font-size: 40px;
+   font-style: normal;
+   font-weight: 700;
+   line-height: 80px;
+}
+
+.contacts__content input {
+   margin-top: 20px;
+   padding-left: 16px;
+   width: 450px;
+   height: 50px;
+   border: var(--color-gold) solid 2px;
+   background-color: transparent;
+   color: var(--color-gold);
+}
+
+::placeholder {
+   color: var(--color-gold);
+}
+
+.contacts__content textarea {
+   margin-top: 21px;
+   margin-bottom: 25px;
+   padding: 10px 0 0 18px;
+   width: 450px;
+   height: 100px;
+   border: var(--color-gold) solid 2px;
+   background-color: transparent;
+   color: var(--color-gold);
+   resize: none;
+}
