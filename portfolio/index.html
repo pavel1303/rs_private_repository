@@ -29,11 +29,11 @@
                <div class="header__right">
                   <nav class="navigation">
                      <ul>
-                        <li><a href="#">Skills</a></li>
-                        <li><a href="#">Portfolio</a></li>
-                        <li><a href="#">Video</a></li>
-                        <li><a href="#">Price</a></li>
-                        <li><a href="#">Contacts</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#video">Video</a></li>
+                        <li><a href="#price">Price</a></li>
+                        <li><a href="#contacts">Contacts</a></li>
                      </ul>
                   </nav>
                   <ul class="language">
@@ -62,7 +62,7 @@
          </div>
       </section>
       <div class="container">
-         <section class="skills section">
+         <section class="skills section" id="skills">
             <div class="section__title">
                <h2>Skills</h2>
             </div>
@@ -97,7 +97,7 @@
                </div>
             </div>
          </section>
-         <section class="portfolio section">
+         <section class="portfolio section" id="portfolio">
             <div class="section__title">
                <h2>Portfolio</h2>
             </div>
@@ -116,17 +116,19 @@
                <img src="assets/img/portfolio-img-5.jpg" alt="Portfolio foto" class="portfolio__gallary-item">
             </div>
          </section>
-         <section class="video section">
+         <section class="video section" id="video">
             <div class="section__title">
                <h2>Video</h2>
             </div>
             <div class="video-player">
-               <svg class="icon-player">
-                  <use xlink:href="assets/svg/sprite.svg#play"></use>
-               </svg>
+               <button>
+                  <svg class="icon-player">
+                     <use xlink:href="assets/svg/sprite.svg#play"></use>
+                  </svg>
+               </button>
             </div>
          </section>
-         <section class="price section">
+         <section class="price section" id="price">
             <div class="section__title">
                <h2>Price</h2>
             </div>
@@ -164,7 +166,7 @@
             </div>
          </section>
       </div>
-      <section class="contacts section">
+      <section class="contacts section" id="contacts">
          <div class="contacts__container">
             <div class="container">
                <div class="contacts__content">
@@ -187,29 +189,37 @@
             <div class="footer__content-item"><span>©</span><span>2022</span><a
                   href="https://github.com/pavel1303">github</a></div>
             <div class="footer__content-item">
-               <p>Rolling Scopes School</p>
+               <a href="https://rs.school/js-stage0/" class="link">Rolling Scopes School</a>
             </div>
             <div class="footer__content-item">
-               <a href="https://www.instagram.com/">
-                  <svg class="logo">
-                     <use xlink:href="assets/svg/sprite.svg#inst"></use>
-                  </svg>
-               </a>
-               <a href="https://www.facebook.com/">
-                  <svg class="logo">
-                     <use xlink:href="assets/svg/sprite.svg#fb"></use>
-                  </svg>
-               </a>
-               <a href="https://twitter.com/">
-                  <svg class="logo">
-                     <use xlink:href="assets/svg/sprite.svg#tw"></use>
-                  </svg>
-               </a>
-               <a href="https://www.pinterest.ru/">
-                  <svg class="logo">
-                     <use xlink:href="assets/svg/sprite.svg#pinterest"></use>
-                  </svg>
-               </a>
+               <ul>
+                  <li>
+                     <a href="https://www.instagram.com/">
+                        <svg class="logo">
+                           <use xlink:href="assets/svg/sprite.svg#inst"></use>
+                        </svg>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="https://www.facebook.com/">
+                        <svg class="logo">
+                           <use xlink:href="assets/svg/sprite.svg#fb"></use>
+                        </svg>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="https://twitter.com/">
+                        <svg class="logo">
+                           <use xlink:href="assets/svg/sprite.svg#tw"></use>
+                        </svg>
+                     </a>
+                  </li>
+                  <a href="https://www.pinterest.ru/">
+                     <svg class="logo">
+                        <use xlink:href="assets/svg/sprite.svg#pinterest"></use>
+                     </svg>
+                  </a>
+               </ul>
             </div>
          </div>
       </div>
