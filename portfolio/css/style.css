@@ -131,3 +131,64 @@ a:hover {
 .hero__content-btn:hover {
    color: var(--color-white);
 }
+
+/* skills */
+
+.skills {
+   padding-top: 105px;
+}
+
+.section__title {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin: 0 auto;
+   width: 50%;
+   font-family: "Merriweather", serif;
+   color: var(--color-gold);
+   font-size: 40px;
+   font-weight: bold;
+}
+
+.section__title h2 {
+   padding: 0 20px;
+}
+
+.section__title::before,
+.section__title::after {
+   display: block;
+   width: 100%;
+   height: 2px;
+   content: "";
+   background-color: var(--color-gold);
+}
+
+.skills__content {
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   padding-top: 70px;
+}
+.skills__content-item {
+   width: 320px;
+   height: 240px;
+   padding: 0 10px;
+   text-align: center;
+}
+
+.skills__content-item h3 {
+   margin-bottom: 30px;
+   letter-spacing: 0.6px;
+}
+
+.skills__content-item p {
+   line-height: 2;
+   font-size: 18px;
+}
+
+.icon-skills {
+   margin-bottom: 48px;
+   width: 60px;
+   height: 60px;
+   fill: var(--color-gold);
+}
