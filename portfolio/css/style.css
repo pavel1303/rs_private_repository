@@ -241,3 +241,28 @@ a:hover {
    width: 450px;
    height: 560px;
 }
+
+/* video */
+
+.video {
+   padding-top: 114px;
+}
+
+.video-player {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: 75px;
+   width: 1400px;
+   height: 705px;
+   background-image: url("../assets/img/video-player.jpg");
+}
+.icon-player {
+   width: 130px;
+   height: 130px;
+   fill: var(--color-white);
+}
+
+.icon-player:hover {
+   fill: var(--color-gold);
+}
