@@ -266,3 +266,45 @@ a:hover {
 .icon-player:hover {
    fill: var(--color-gold);
 }
+
+/* price */
+
+.price {
+   padding-top: 115px;
+}
+.price__list {
+   display: flex;
+   justify-content: space-between;
+   padding-top: 75px;
+}
+.price__list-item {
+   padding: 43px 30px;
+   width: 450px;
+   height: 505px;
+   border: var(--color-gold) solid 3px;
+   text-align: center;
+}
+.price__list-item h3 {
+   font-family: "Merriweather", serif;
+   font-size: 28px;
+   font-weight: bold;
+   line-height: 1.8;
+}
+
+.price__list-item div {
+   padding-top: 30px;
+   padding-bottom: 24px;
+   font-family: "Merriweather", serif;
+   font-size: 24px;
+   font-weight: bold;
+   color: var(--color-gold);
+}
+
+.price__list-item span {
+   display: block;
+   padding-top: 14px;
+   font-size: 18px;
+}
+.price__list-item .btn {
+   margin-top: 47px;
+}
