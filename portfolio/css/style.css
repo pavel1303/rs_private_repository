@@ -90,7 +90,7 @@ a:hover {
 
 .language li {
    margin-left: 9px;
-   font-weight: bold;
+   font-weight: 700;
 }
 
 /* hero */
@@ -114,7 +114,7 @@ a:hover {
    margin-bottom: 21px;
    font-family: "Merriweather", serif;
    font-size: 60px;
-   font-weight: bold;
+   font-weight: 700;
    line-height: 1.7;
 }
 .hero__content-p {
@@ -147,7 +147,7 @@ a:hover {
    font-family: "Merriweather", serif;
    color: var(--color-gold);
    font-size: 40px;
-   font-weight: bold;
+   font-weight: 700;
 }
 
 .section__title h2 {
@@ -287,7 +287,7 @@ a:hover {
 .price__list-item h3 {
    font-family: "Merriweather", serif;
    font-size: 28px;
-   font-weight: bold;
+   font-weight: 700;
    line-height: 1.8;
 }
 
@@ -296,7 +296,7 @@ a:hover {
    padding-bottom: 24px;
    font-family: "Merriweather", serif;
    font-size: 24px;
-   font-weight: bold;
+   font-weight: 700;
    color: var(--color-gold);
 }
 
