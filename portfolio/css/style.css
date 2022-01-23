@@ -608,4 +608,23 @@ a:hover {
       max-width: 420px;
       height: 505px;
    }
+
+   /* contacts */
+
+   .contacts {
+      padding-top: 80px;
+   }
+   .contacts__container {
+      background-image: url("../assets/img/contacts-small.jpg");
+      height: 600px;
+   }
+   .contacts__content {
+      align-items: center;
+      text-align: center;
+   }
+   .contacts__content h2 {
+      padding-top: 50px;
+      font-size: 32px;
+      margin-bottom: -6px;
+   }
 }
