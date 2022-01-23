@@ -491,7 +491,7 @@ a:hover {
       display: block;
       top: 0;
       left: 150px;
-      width: 80%;
+      width: 620px;
       height: 1050px;
       z-index: 1;
       background-color: var(--color-black);
@@ -715,9 +715,13 @@ a:hover {
    }
 }
 
-@media screen and (max-width: 500px) {
-   .navigation.active ul {
+@media screen and (max-width: 620px) {
+   .navigation.active {
+      max-width: 620px;
       left: 0;
+   }
+   .navigation.active ul {
+      left: 15px;
       font-size: 25px;
    }
 }
