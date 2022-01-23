@@ -594,4 +594,18 @@ a:hover {
       height: 70px;
       margin-left: -5px;
    }
+
+   /* price */
+
+   .price {
+      padding-top: 100px;
+   }
+   .price__list {
+      padding-top: 70px;
+      gap: 50px;
+   }
+   .price__list-item {
+      max-width: 420px;
+      height: 505px;
+   }
 }
