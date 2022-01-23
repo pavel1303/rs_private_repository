@@ -29,6 +29,7 @@ body {
    font-size: 20px;
    color: var(--color-white);
    background-color: var(--color-black);
+   overflow-x: hidden;
 }
 
 ul {
@@ -99,8 +100,8 @@ a:hover {
    margin-left: 9px;
    font-weight: 700;
 }
-.slide-menu {
-   display: none;
+.language li:first-child {
+   color: var(--color-gold);
 }
 .burger {
    display: none;
@@ -251,6 +252,10 @@ a:hover {
    border: var(--color-gold) solid 2px;
    background-color: var(--color-black);
    color: var(--color-gold);
+}
+.portfolio__btns-item:last-child {
+   background-color: var(--color-gold);
+   color: var(--color-black);
 }
 
 .portfolio__btns-item:hover {
@@ -450,8 +455,25 @@ a:hover {
 
 @media screen and (max-width: 769px) {
    .navigation {
-      display: none;
+      display: flex;
+      position: absolute;
+      top: 0;
+      left: 1000px;
+      width: 620px;
+      height: 1050px;
+      z-index: 1;
+      background-color: var(--color-black);
+      transition: 0.5s;
    }
+   .navigation ul {
+      position: absolute;
+      top: 150px;
+      left: 95px;
+      display: flex;
+      flex-direction: column;
+      gap: 47px;
+   }
+
    .container {
       max-width: 680px;
    }
@@ -459,9 +481,59 @@ a:hover {
    .contacts__container .container {
       justify-content: center;
    }
+   .burger {
+      display: flex;
+      z-index: 1;
+   }
 
-   .slide-menu {
-      display: none;
+   .navigation.active {
+      position: fixed;
+      display: block;
+      top: 0;
+      left: 150px;
+      width: 80%;
+      height: 1050px;
+      z-index: 1;
+      background-color: var(--color-black);
+      transition: 0.5s;
+   }
+   .navigation.active ul {
+      position: relative;
+      top: 150px;
+      left: 95px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 47px;
+      width: 100%;
+      font-size: 35px;
+      font-weight: 300;
+   }
+   .burger.active {
+      position: fixed;
+      right: 65px;
+   }
+   .burger div {
+      transition: 0.5s;
+   }
+   .burger.active div {
+      transition: 0.5s;
+   }
+   .burger.active div:nth-child(1) {
+      position: relative;
+      top: 7px;
+      transform: rotate(45deg);
+   }
+   .burger.active div:nth-child(2) {
+      position: absolute;
+      top: 7px;
+      /* transform: translate(150px); */
+      background-color: var(--color-black);
+   }
+   .burger.active div:nth-child(3) {
+      position: relative;
+      bottom: 7px;
+      transform: rotate(-45deg);
    }
 
    .skills__content,
@@ -504,6 +576,7 @@ a:hover {
    }
 
    .header__conteiner {
+      position: relative;
       background-image: url("../assets/img/bg-header-small.jpg");
    }
 
@@ -626,5 +699,25 @@ a:hover {
       padding-top: 50px;
       font-size: 32px;
       margin-bottom: -6px;
+   }
+
+   /* footer */
+
+   .footer__content {
+      margin-top: 5px;
+   }
+   .footer__content-item .link {
+      padding-left: 0;
+   }
+   .footer__content-item li {
+      margin-top: 3px;
+      margin-right: 7px;
+   }
+}
+
+@media screen and (max-width: 500px) {
+   .navigation.active ul {
+      left: 0;
+      font-size: 25px;
    }
 }
