@@ -100,9 +100,11 @@ a:hover {
    margin-left: 9px;
    font-weight: 700;
 }
-.language li:first-child {
+
+.checked {
    color: var(--color-gold);
 }
+
 .burger {
    display: none;
    flex-direction: column;
