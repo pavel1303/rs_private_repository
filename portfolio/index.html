@@ -14,11 +14,11 @@
    <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body data-theme>
    <header>
       <div class="header__conteiner">
          <div class="container">
-            <div class="header">
+            <div class="header" data-theme>
                <div class="header__left">
                   <a href="#">
                      <svg class="logo">
@@ -27,7 +27,7 @@
                   </a>
                </div>
                <div class="header__right">
-                  <nav class="navigation">
+                  <nav class="navigation" data-theme>
                      <ul>
                         <li><a class="navigation-item" href="#skills" data-i18n="skills">Skills</a></li>
                         <li><a class="navigation-item" href="#portfolio" data-i18n="portfolio">Portfolio</a></li>
@@ -41,10 +41,15 @@
                      <li>/</li>
                      <li><a href="#">ru</a></li>
                   </ul>
+                  <div class="theme">
+                     <svg class="theme">
+                        <use xlink:href="assets/svg/sprite.svg#dark" data-theme-toggle='dark'></use>
+                     </svg>
+                  </div>
                   <div class="burger">
-                     <div></div>
-                     <div></div>
-                     <div></div>
+                     <div data-theme></div>
+                     <div data-theme></div>
+                     <div data-theme></div>
                   </div>
                </div>
             </div>
@@ -55,7 +60,7 @@
       <section class="hero section">
          <div class="hero__container">
             <div class="container">
-               <div class="hero__content">
+               <div class="hero__content" data-theme>
                   <h1 class="hero__content-h1" data-i18n="hero-title">Alexa Rise</h1>
                   <p class="hero__content-p" data-i18n="hero-text">Save sincere emotions, romantic feelings and happy
                      moments of life
@@ -69,7 +74,7 @@
       </section>
       <div class="container">
          <section class="skills section" id="skills">
-            <div class="section__title">
+            <div class="section__title" data-theme>
                <h2 data-i18n="skills">Skills</h2>
             </div>
             <div class="skills__content">
@@ -104,14 +109,18 @@
             </div>
          </section>
          <section class="portfolio section" id="portfolio">
-            <div class="section__title">
+            <div class="section__title" data-theme>
                <h2 data-i18n="portfolio">Portfolio</h2>
             </div>
             <div class="portfolio__btns">
-               <button class="portfolio__btns-item btn" data-season="winter" data-i18n="winter">Winter</button>
-               <button class="portfolio__btns-item btn" data-season="spring" data-i18n="spring">Spring</button>
-               <button class="portfolio__btns-item btn" data-season="summer" data-i18n="summer">Summer</button>
-               <button class="portfolio__btns-item btn chosen" data-season="autumn" data-i18n="autumn">Autumn</button>
+               <button class="portfolio__btns-item btn" data-season="winter" data-i18n="winter"
+                  data-theme>Winter</button>
+               <button class="portfolio__btns-item btn" data-season="spring" data-i18n="spring"
+                  data-theme>Spring</button>
+               <button class="portfolio__btns-item btn" data-season="summer" data-i18n="summer"
+                  data-theme>Summer</button>
+               <button class="portfolio__btns-item btn chosen" data-season="autumn" data-i18n="autumn"
+                  data-theme>Autumn</button>
             </div>
             <div class="portfolio__gallary">
                <img src="assets/img/portfolio-img.jpg" alt="Portfolio foto" class="portfolio__gallary-item">
@@ -125,7 +134,7 @@
       </div>
       <div class="video-section container">
          <section class="video section" id="video">
-            <div class="section__title">
+            <div class="section__title" data-theme>
                <h2 data-i18n="video">Video</h2>
             </div>
             <div class="video-player">
@@ -139,7 +148,7 @@
       </div>
       <div class="container">
          <section class="price section" id="price">
-            <div class="section__title">
+            <div class="section__title" data-theme>
                <h2 data-i18n="price">Price</h2>
             </div>
             <div class="price__list">
@@ -194,44 +203,47 @@
 
    </main>
    <footer>
-      <div class="container">
-         <div class="footer__content">
-            <div class="footer__content-item"><span>©</span><span>2022</span><a
-                  href="https://github.com/pavel1303">github</a></div>
-            <div class="footer__content-item">
-               <a href="https://rs.school/js-stage0/" class="link">Rolling Scopes School</a>
-            </div>
-            <div class="footer__content-item">
-               <ul>
-                  <li>
-                     <a href="https://www.instagram.com/">
-                        <svg class="logo">
-                           <use xlink:href="assets/svg/sprite.svg#inst"></use>
-                        </svg>
-                     </a>
-                  </li>
-                  <li>
-                     <a href="https://www.facebook.com/">
-                        <svg class="logo">
-                           <use xlink:href="assets/svg/sprite.svg#fb"></use>
-                        </svg>
-                     </a>
-                  </li>
-                  <li>
-                     <a href="https://twitter.com/">
-                        <svg class="logo">
-                           <use xlink:href="assets/svg/sprite.svg#tw"></use>
-                        </svg>
-                     </a>
-                  </li>
-                  <li>
-                     <a href="https://www.pinterest.ru/">
-                        <svg class="logo">
-                           <use xlink:href="assets/svg/sprite.svg#pinterest"></use>
-                        </svg>
-                     </a>
-                  </li>
-               </ul>
+
+      <div class="footer__container">
+         <div class="container">
+            <div class="footer__content">
+               <div class="footer__content-item"><span>©</span><span>2022</span><a
+                     href="https://github.com/pavel1303">github</a></div>
+               <div class="footer__content-item">
+                  <a href="https://rs.school/js-stage0/" class="link">Rolling Scopes School</a>
+               </div>
+               <div class="footer__content-item">
+                  <ul>
+                     <li>
+                        <a href="https://www.instagram.com/">
+                           <svg class="logo">
+                              <use xlink:href="assets/svg/sprite.svg#inst"></use>
+                           </svg>
+                        </a>
+                     </li>
+                     <li>
+                        <a href="https://www.facebook.com/">
+                           <svg class="logo">
+                              <use xlink:href="assets/svg/sprite.svg#fb"></use>
+                           </svg>
+                        </a>
+                     </li>
+                     <li>
+                        <a href="https://twitter.com/">
+                           <svg class="logo">
+                              <use xlink:href="assets/svg/sprite.svg#tw"></use>
+                           </svg>
+                        </a>
+                     </li>
+                     <li>
+                        <a href="https://www.pinterest.ru/">
+                           <svg class="logo">
+                              <use xlink:href="assets/svg/sprite.svg#pinterest"></use>
+                           </svg>
+                        </a>
+                     </li>
+                  </ul>
+               </div>
             </div>
          </div>
       </div>

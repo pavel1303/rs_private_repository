@@ -1,58 +1,59 @@
 import i18Obj from "./translite.js";
-
-
+/*--------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------*/
+/*--------------------------------Выпадающее меню---------------------------------------*/
+/*--------------------------------------------------------------------------------------*/
 const menu = document.querySelector('.burger');
 const nav = document.querySelector('.navigation');
-const menuItem = document.querySelectorAll('.navigation-item');
-const imgs = document.querySelectorAll('.portfolio__gallary-item');
-const portfolioBtns = document.querySelectorAll('.portfolio__btns-item');
+
+menu.addEventListener('click', showMenu);
+nav.addEventListener('click', showMenu)
+
+function showMenu() {
+   nav.classList.toggle('active');
+   menu.classList.toggle('active');
+}
+
+/*--------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------*/
+/*----------------------------Смена картинок в портфолио--------------------------------*/
+/*--------------------------------------------------------------------------------------*/
+const portfBtns = document.querySelector('.portfolio__btns');
+
+portfBtns.addEventListener('click', (event) => {
+   let btn = event.target;
+   let season = btn.dataset.season;
+
+   if (btn.nodeName === 'BUTTON') {
+      portfBtns.querySelectorAll('button').forEach(btn => btn.classList.remove('chosen'));
+      btn.classList.add('chosen');
+      changeImage(season);
+   }
+})
+
+function changeImage(season) {
+   let gallary = document.querySelectorAll('.portfolio__gallary-item');
+   gallary.forEach((img, i) => {
+      img.src = `assets/img/${season}/${i + 1}.jpg`;
+   })
+}
+/*--------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------*/
+/*--------------------------------Preloader для картинок--------------------------------*/
+/*--------------------------------------------------------------------------------------*/
+
 const seasons = ['winter', 'spring', 'summer', 'autumn'];
-const lang = document.querySelector('.language').querySelectorAll('a');
-
-
-changeImagesAfterClick(imgs, portfolioBtns);
 
 preloaderImages(seasons);
 
-menu.addEventListener('click', () => {
-   nav.classList.toggle('active');
-   menu.classList.toggle('active');
-})
-
-menuItem.forEach(el => {
-   el.addEventListener('click', () => {
-      nav.classList.remove('active');
-      menu.classList.remove('active');
-   })
-})
-
-lang.forEach(el => {
-   el.addEventListener('click', () => {
-      lang.forEach(el => el.classList.remove('checked'));
-      el.classList.add('checked');
-      changeLanguage(el.textContent);
-   })
-})
-
-function changeImagesAfterClick(imgs, btns) {
-   btns.forEach(el => {
-      el.addEventListener('click', () => {
-         btns.forEach(el => el.classList.remove('chosen'));
-         el.classList.add('chosen');
-         let value = el.dataset.season;
-         changeImages(imgs, value);
-      })
-   })
-};
-
-function changeImages(imgs, value) {
-   imgs.forEach((el, index) => {
-      el.src = `assets/img/${value}/${index + 1}.jpg`
-   })
-}
-
 function preloaderImages(arr) {
-   seasons.forEach(el => {
+   arr.forEach(el => {
       for (let i = 1; i <= 6; i++) {
          const img = new Image();
          img.src = `assets/img/${el}/${i}.jpg`;
@@ -60,12 +61,83 @@ function preloaderImages(arr) {
    })
 }
 
+/*--------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------*/
+/*-----------------------------------Мультиязычность------------------------------------*/
+/*--------------------------------------------------------------------------------------*/
+
+const languages = document.querySelector('.language');
+
+languages.addEventListener('click', (event) => {
+   let actualLang = event.target.textContent;
+   localStorage.setItem('lang', actualLang);
+   changeLanguage(actualLang);
+})
+
 function changeLanguage(lang) {
-   const words = document.body.querySelectorAll('[data-i18n]');
-   words.forEach(el => {
-      el.textContent = i18Obj[lang][el.dataset.i18n];
+   let words = document.querySelectorAll('[data-i18n]');
+   languages.querySelectorAll('a').forEach(a => {
+      if (a.textContent === lang) {
+         a.classList.add('checked');
+      } else {
+         a.classList.remove('checked');
+      }
    })
+
+   words.forEach(word => word.textContent = `${i18Obj[lang][word.dataset.i18n]}`);
 }
+/*--------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------*/
+/*--------------------------------Работа с LocalStorage---------------------------------*/
+/*--------------------------------------------------------------------------------------*/
+function getLocalStorage() {
+   if (localStorage.getItem('lang')) {
+      const curLang = localStorage.getItem('lang');
+      changeLanguage(curLang);
+   }
+   if (localStorage.getItem('theme')) {
+      const curTheme = localStorage.getItem('theme');
+      changeTheme(curTheme);
+   }
+}
+window.addEventListener('load', getLocalStorage)
+/*--------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------*/
+/*---------------------------------------Смена темы-------------------------------------*/
+/*--------------------------------------------------------------------------------------*/
+const elemForChange = document.querySelectorAll('[data-theme]');
+const themeToggle = document.querySelector('.theme');
+let actualTheme = 'dark';
 
 
+themeToggle.addEventListener('click', () => {
+   let arrTheme = ['dark', 'light'];
+   let newTheme = arrTheme.filter(el => el != actualTheme).join();
+   changeTheme(newTheme);
+})
+
+function changeTheme(theme) {
+   const themeBtn = themeToggle.querySelector('use');
+   themeBtn.dataset.themeToggle = theme;
+   themeBtn.href.baseVal = `assets/svg/sprite.svg#${theme}`
+   actualTheme = theme;
+   localStorage.setItem('theme', actualTheme);
+   elemForChange.forEach(el => el.classList.toggle('sun-theme'))
+}
 
