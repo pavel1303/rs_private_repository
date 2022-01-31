@@ -25,8 +25,12 @@ function showMenu() {
 const portfBtns = document.querySelector('.portfolio__btns');
 
 portfBtns.addEventListener('click', (event) => {
-   let btn = event.target;
+   let btn = event.target.closest('button');
    let season = btn.dataset.season;
+
+   if (!btn) return;
+
+   if (!portfBtns.contains(btn)) return;
 
    if (btn.nodeName === 'BUTTON') {
       portfBtns.querySelectorAll('button').forEach(btn => btn.classList.remove('chosen'));
@@ -106,7 +110,6 @@ function getLocalStorage() {
    }
    if (localStorage.getItem('theme')) {
       const curTheme = localStorage.getItem('theme');
-      console.log(curTheme);
       changeTheme(curTheme);
    }
 }
