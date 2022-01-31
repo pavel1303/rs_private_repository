@@ -106,6 +106,7 @@ function getLocalStorage() {
    }
    if (localStorage.getItem('theme')) {
       const curTheme = localStorage.getItem('theme');
+      console.log(curTheme);
       changeTheme(curTheme);
    }
 }
@@ -138,6 +139,11 @@ function changeTheme(theme) {
    themeBtn.href.baseVal = `assets/svg/sprite.svg#${theme}`
    actualTheme = theme;
    localStorage.setItem('theme', actualTheme);
-   elemForChange.forEach(el => el.classList.toggle('sun-theme'))
+   if (actualTheme === 'light') {
+      elemForChange.forEach(el => el.classList.add('sun-theme'));
+   } else {
+      elemForChange.forEach(el => el.classList.remove('sun-theme'));
+   }
+
 }
 
