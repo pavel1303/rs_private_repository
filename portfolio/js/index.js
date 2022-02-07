@@ -158,5 +158,74 @@ function changeTheme(theme) {
 /*--------------------------------------------------------------------------------------*/
 /*--------------------------------------------------------------------------------------*/
 /*--------------------------------------------------------------------------------------*/
-/*---------------------------------------Видео плеер-------------------------------------*/
+/*---------------------------------------Видео плеер------------------------------------*/
 /*--------------------------------------------------------------------------------------*/
+const play = document.querySelector('.play-pause');
+const volumeSlider = document.querySelector('.volume__slider');
+const volumeFill = document.querySelector('.volume__slider-filled')
+const volume = document.querySelector('.volume__button');
+const video = document.querySelector('video');
+const button = document.querySelector('.button__icon-player');
+const progress = document.querySelector('.progress')
+const progressBar = document.querySelector('.progress__filled');
+
+
+
+video.addEventListener('timeupdate', () => {
+   progressBar.style.width = `${100 / video.duration * video.currentTime}%`
+})
+
+volumeSlider.addEventListener('click', (event) => {
+   let acctualVol = event.offsetX / 195;
+   volumeFill.style.width = `${acctualVol * 100}%`
+   video.volume = acctualVol > 0.08 ? acctualVol : 0;
+   volume.childNodes[1].href.baseVal = acctualVol > 0.08 ? 'assets/svg/video/sprite.svg#volume' : 'assets/svg/video/sprite.svg#mute';
+})
+
+
+progress.addEventListener('click', (event) => {
+   let acctualTime = event.offsetX / (978 / 100);
+   progressBar.style.width = `${acctualTime}%`;
+   video.currentTime = video.duration / 100 * acctualTime;
+   console.dir(event.offsetX);
+})
+
+button.addEventListener('click', () => {
+   const videoPlayer = document.querySelector('.video-player-video');
+   videoPlayer.style.display = 'block';
+   button.style.display = 'none';
+   play.childNodes[1].href.baseVal = 'assets/svg/video/sprite.svg#pause';
+   play.classList.remove('toggle');
+   video.play();
+})
+
+play.addEventListener('click', () => {
+   if (play.classList.contains('toggle')) {
+      play.childNodes[1].href.baseVal = 'assets/svg/video/sprite.svg#pause';
+      play.classList.remove('toggle');
+      button.style.display = 'none';
+      video.play();
+   } else {
+      play.childNodes[1].href.baseVal = 'assets/svg/video/sprite.svg#play';
+      play.classList.add('toggle');
+      button.style.display = 'block';
+      video.pause();
+   }
+})
+let acctualVol = 0;
+volume.addEventListener('click', () => {
+   if (volume.classList.contains('toggle')) {
+      volume.childNodes[1].href.baseVal = 'assets/svg/video/sprite.svg#mute';
+      acctualVol = video.volume;
+      video.volume = 0;
+      volumeFill.style.width = `${video.volume * 100}%`
+      volume.classList.remove('toggle')
+   } else {
+      volume.childNodes[1].href.baseVal = 'assets/svg/video/sprite.svg#volume';
+      video.volume = acctualVol;
+      volumeFill.style.width = `${video.volume * 100}%`
+      volume.classList.add('toggle')
+   }
+})
+
+
