@@ -148,12 +148,35 @@
                <h2 data-i18n="video">Video</h2>
             </div>
             <div class="video-player">
-               <button>
+               <div class="video-player-video">
+                  <video src="assets/video/video.mp4" width="100%"></video>
+                  <div class="player__controls">
+                     <button class="player__button toggle" title="Toggle play">
+                        <svg class="play-pause">
+                           <use xlink:href="assets/svg/video/sprite.svg#play"></use>
+                        </svg>
+                     </button>
+                     <div class="progress">
+                        <div class="progress__filled"></div>
+                     </div>
+                     <div class="player__volume">
+                        <svg class="volume__button">
+                           <use xlink:href="assets/svg/video/sprite.svg#volume"></use>
+                        </svg>
+                        <div class="volume__slider">
+                           <div class="volume__slider-filled"></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <button class="button__icon-player">
                   <svg class="icon-player">
                      <use xlink:href="assets/svg/sprite.svg#play"></use>
                   </svg>
                </button>
             </div>
+
+
          </section>
       </div>
       <div class="container">
