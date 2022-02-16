@@ -5,80 +5,114 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/main.css">
    <title>Snoop Mem-cards</title>
 </head>
 
-<body>
-   <main>
-      <section>
-         <div class="mem-card">
+<body class="body">
+   <header class="header">
+      <h1>Snoop Dog Memory Game</h1>
+   </header>
+   <main class="main">
+      <section class="score-table">
+         <h2>Score table</h2>
+         <ol>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+         </ol>
+      </section>
+      <section class="game">
+         <div class="mem-card" data-snoop="1">
             <img class="back-img" src="assets/1.png" alt="Back img">
             <img class="front-img" src="assets/front.png" alt="Front img">
          </div>
-         <div class="mem-card">
+         <div class="mem-card" data-snoop="2">
             <img class="back-img" src="assets/2.png" alt="Back img">
             <img class="front-img" src="assets/front.png" alt="Front img">
          </div>
-         <div class="mem-card">
+         <div class="mem-card" data-snoop="3">
             <img class="back-img" src="assets/3.png" alt="Back img">
             <img class="front-img" src="assets/front.png" alt="Front img">
          </div>
-         <div class="mem-card">
+         <div class="mem-card" data-snoop="4">
             <img class="back-img" src="assets/4.png" alt="Back img">
             <img class="front-img" src="assets/front.png" alt="Front img">
          </div>
-         <div class="mem-card">
+         <div class="mem-card" data-snoop="5">
             <img class="back-img" src="assets/5.png" alt="Back img">
             <img class="front-img" src="assets/front.png" alt="Front img">
          </div>
-         <div class="mem-card">
+         <div class="mem-card" data-snoop="6">
             <img class="back-img" src="assets/6.png" alt="Back img">
             <img class="front-img" src="assets/front.png" alt="Front img">
          </div>
-         <div class="mem-card">
+         <div class="mem-card" data-snoop="7">
             <img class="back-img" src="assets/7.png" alt="Back img">
             <img class="front-img" src="assets/front.png" alt="Front img">
          </div>
-         <div class="mem-card">
+         <div class="mem-card" data-snoop="8">
             <img class="back-img" src="assets/8.png" alt="Back img">
             <img class="front-img" src="assets/front.png" alt="Front img">
          </div>
-         <div class="mem-card">
+         <div class="mem-card" data-snoop="1">
             <img class="back-img" src="assets/1.png" alt="Back img">
             <img class="front-img" src="assets/front.png" alt="Front img">
          </div>
-         <div class="mem-card">
+         <div class="mem-card" data-snoop="2">
             <img class="back-img" src="assets/2.png" alt="Back img">
             <img class="front-img" src="assets/front.png" alt="Front img">
          </div>
-         <div class="mem-card">
+         <div class="mem-card" data-snoop="3">
             <img class="back-img" src="assets/3.png" alt="Back img">
             <img class="front-img" src="assets/front.png" alt="Front img">
          </div>
-         <div class="mem-card">
+         <div class="mem-card" data-snoop="4">
             <img class="back-img" src="assets/4.png" alt="Back img">
             <img class="front-img" src="assets/front.png" alt="Front img">
          </div>
-         <div class="mem-card">
+         <div class="mem-card" data-snoop="5">
             <img class="back-img" src="assets/5.png" alt="Back img">
             <img class="front-img" src="assets/front.png" alt="Front img">
          </div>
-         <div class="mem-card">
+         <div class="mem-card" data-snoop="6">
             <img class="back-img" src="assets/6.png" alt="Back img">
             <img class="front-img" src="assets/front.png" alt="Front img">
          </div>
-         <div class="mem-card">
+         <div class="mem-card" data-snoop="7">
             <img class="back-img" src="assets/7.png" alt="Back img">
             <img class="front-img" src="assets/front.png" alt="Front img">
          </div>
-         <div class="mem-card">
+         <div class="mem-card" data-snoop="8">
             <img class="back-img" src="assets/8.png" alt="Back img">
             <img class="front-img" src="assets/front.png" alt="Front img">
          </div>
       </section>
+      <section>
+         <div class="attemps">
+            <h2>Number of attempts:</h2>
+            <span class="attemps-span"></span>
+         </div>
+         <div class="game-time">
+            <h2>Time:</h2>
+            <span class="game-time-span"></span>
+         </div>
+         <button>Start over</button>
+      </section>
+
+
       <script src="js/index.js"></script>
    </main>
+   <footer>
 
+   </footer>
 </body>
 
 </html>

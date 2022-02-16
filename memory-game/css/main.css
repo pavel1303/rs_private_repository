@@ -1,1 +1,91 @@
 @import url("normalize.css");
+
+.body {
+   background-color: palegoldenrod;
+}
+.header {
+   text-align: center;
+}
+.main {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+}
+
+.game {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   gap: 25px;
+   padding: 50px;
+   max-width: 700px;
+   perspective: 1000px;
+}
+
+.mem-card {
+   position: relative;
+   width: 150px;
+   height: 100px;
+   background-color: burlywood;
+   border: 1px solid black;
+   border-radius: 15px;
+   box-shadow: 15px 15px 30px black;
+   transform: scale(1);
+   transform-style: preserve-3d;
+   transition: transform 0.5s;
+}
+
+.mem-card:active {
+   transform: scale(0.9);
+   transition: 0.4s;
+}
+.mem-card.flip {
+   transform: rotateY(180deg);
+   box-shadow: -15px 15px 30px black;
+}
+
+.back-img {
+   position: absolute;
+   left: 40px;
+   top: 5px;
+   max-width: 60px;
+   backface-visibility: hidden;
+   transform: rotateY(180deg);
+}
+
+.front-img {
+   position: absolute;
+   width: 80px;
+   top: 20px;
+   left: 35px;
+   backface-visibility: hidden;
+}
+img[src="assets/2.png"] {
+   top: 0;
+   max-width: 71px;
+}
+img[src="assets/4.png"],
+img[src="assets/5.png"] {
+   max-width: 75px;
+}
+img[src="assets/3.png"] {
+   max-width: 82px;
+   top: 0;
+}
+
+img[src="assets/7.png"] {
+   max-width: 69px;
+   top: 0;
+}
+img[src="assets/6.png"] {
+   max-width: 96px;
+}
+img[src="assets/8.png"] {
+   max-width: 98px;
+}
+
+.attemps,
+.game-time {
+   display: flex;
+   flex-direction: row;
+}
