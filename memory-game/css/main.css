@@ -88,4 +88,6 @@ img[src="assets/8.png"] {
 .game-time {
    display: flex;
    flex-direction: row;
+   align-items: center;
+   justify-content: space-between;
 }
