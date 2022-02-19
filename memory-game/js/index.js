@@ -1,12 +1,22 @@
-let cards = document.querySelectorAll('.mem-card');
-let game = document.querySelector('.game');
+const cards = document.querySelectorAll('.mem-card');
+const game = document.querySelector('.game');
+const resetButton = document.querySelector('.reset');
+const countAttemps = document.querySelector('.attemps-span');
+const tableRows = document.querySelectorAll('.table-row');
+const music = document.querySelector('.win');
+const popUp = document.querySelector('.popup');
+const popUpRes = document.querySelector('.popup__res');
+const popUpButton = document.querySelector('.popup__close');
 let hasFlipedCard = false;
 let firstCard, secondCard;
 let locCard = false;
 let timerOn = false;
-let resetButton = document.querySelector('.reset');
-let countAttemps = document.querySelector('.attemps-span');
 let counterAttempsCur = 0;
+let openCards = 0;
+let arrResults = [];
+
+
+
 
 function flipCard(el) {
    if (!timerOn) timer();
@@ -23,6 +33,8 @@ function flipCard(el) {
       if (firstCard.dataset.snoop === secondCard.dataset.snoop) {
          countAttemps.textContent = ++counterAttempsCur;
          disableCard();
+         openCards++;
+         endGame();
       } else {
          unflipCards();
          countAttemps.textContent = ++counterAttempsCur;
@@ -61,11 +73,15 @@ function newStep() {
    secondCard = null;
 }
 
-resetButton.addEventListener('click', () => {
+function newGame() {
    timerStop();
    counterAttempsCur = 0;
    countAttemps.textContent = counterAttempsCur;
    cards.forEach(card => card.classList.remove('flip'));
+}
+
+resetButton.addEventListener('click', () => {
+   newGame();
 });
 
 
@@ -109,5 +125,57 @@ function timerStop() {
    clearTimeout(t);
    time.textContent = '00:00';
    sec = 0;
-   mim = 0;
+   min = 0;
 }
+
+
+/*End game */
+
+function endGame() {
+   if (openCards === 8) {
+      writeRes();
+      pushRes();
+      showPopup();
+      popUpRes.textContent = `Attemps: ${counterAttempsCur}\nTime: ${time.textContent}`;
+      setTimeout(newGame, 2000);
+      shake();
+      openCards = 0;
+      localStorage.setItem('results', JSON.stringify(arrResults));
+
+   }
+}
+
+function writeRes() {
+   arrResults.unshift(`Attemps: ${counterAttempsCur}\nTime: ${time.textContent}`);
+}
+
+function pushRes() {
+   tableRows.forEach((row, i) => {
+      row.textContent = arrResults[i] || '-------';
+   })
+}
+
+
+function getLocalStorage() {
+   if (localStorage.getItem('results')) {
+      arrResults = JSON.parse(localStorage.getItem('results'));
+      pushRes();
+   }
+}
+window.addEventListener('load', getLocalStorage);
+
+/* Popup */
+
+function showPopup() {
+   popUp.classList.add('open');
+   music.play();
+
+}
+function hidePopup() {
+   popUp.classList.remove('open');
+   music.pause();
+}
+popUpButton.addEventListener('click', hidePopup);
+
+
+
