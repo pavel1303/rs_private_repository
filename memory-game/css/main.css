@@ -236,6 +236,11 @@ img[src="assets/8.png"] {
    text-shadow: 10px 10px 25px black;
    color: rgb(89, 180, 168);
 }
+@media screen and (max-width: 1024px) {
+   .popup__thug.open {
+      top: 18%;
+   }
+}
 
 @media screen and (max-width: 940px) {
    .main {
@@ -260,5 +265,14 @@ img[src="assets/8.png"] {
    }
    .reset {
       order: 3;
+   }
+   .popup__thug.open {
+      top: 16%;
+   }
+}
+
+@media screen and (max-width: 769px) {
+   .popup__thug.open {
+      top: 13%;
    }
 }
