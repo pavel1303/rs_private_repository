@@ -7,6 +7,8 @@ const music = document.querySelector('.win');
 const popUp = document.querySelector('.popup');
 const popUpRes = document.querySelector('.popup__res');
 const popUpButton = document.querySelector('.popup__close');
+const popUpImg = document.querySelector('.popup__snoop');
+const popUpThug = document.querySelector('.popup__thug');
 let hasFlipedCard = false;
 let firstCard, secondCard;
 let locCard = false;
@@ -167,12 +169,18 @@ window.addEventListener('load', getLocalStorage);
 /* Popup */
 
 function showPopup() {
-   popUp.classList.add('open');
+   music.volume = 0.25;
    music.play();
-
+   popUp.classList.add('open');
+   setTimeout(() => {
+      popUpImg.classList.add('open');
+      popUpThug.classList.add('open');
+   }, 3000)
 }
 function hidePopup() {
    popUp.classList.remove('open');
+   popUpImg.classList.remove('open');
+   popUpThug.classList.remove('open');
    music.pause();
 }
 popUpButton.addEventListener('click', hidePopup);

@@ -185,12 +185,56 @@ img[src="assets/8.png"] {
    border-radius: 10px;
    box-shadow: 0px 10px 15px black;
 }
+.popup__snoop {
+   visibility: hidden;
+   width: 100%;
+   position: absolute;
+   left: -10%;
+   opacity: 0;
+}
+.popup__snoop.open {
+   visibility: visible;
+   opacity: 1;
+   transition: 3s;
+}
+.popup__thug {
+   width: 35%;
+   position: absolute;
+   top: -200%;
+   left: 8%;
+   transform: rotateY(180deg) rotateZ(35deg);
+}
+.popup__thug.open {
+   top: 25%;
+   transition: 6s;
+}
+
 .popup__close:active {
    box-shadow: 0 5px 10px black;
    transform: scale(0.96);
 }
 .popup__close:hover {
    cursor: pointer;
+}
+
+.footer {
+   margin-top: 10px;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   gap: 0 100px;
+}
+.footer__img {
+   width: 80px;
+}
+
+.footer__text {
+   font-family: "Permanent Marker", cursive;
+   font-size: 40px;
+   font-weight: 700;
+   text-shadow: 10px 10px 25px black;
+   color: rgb(89, 180, 168);
 }
 
 @media screen and (max-width: 940px) {
