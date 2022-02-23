@@ -344,6 +344,7 @@ a:hover {
 
 .portfolio {
    padding-top: 117px;
+   margin-bottom: 114px;
 }
 
 .portfolio__btns {
@@ -382,10 +383,6 @@ a:hover {
 
 /* video */
 
-.video {
-   padding-top: 114px;
-}
-
 .video-player {
    /* display: flex; */
    position: relative;
@@ -395,31 +392,29 @@ a:hover {
    max-width: 1400px;
    height: 705px;
    background-image: url("../assets/img/video-player.jpg");
+   background-size: cover;
    border: 1px var(--color-gold) solid;
 }
 
 .video-player-video {
-   display: none;
+   visibility: hidden;
 }
 video {
-   position: absolute;
    width: 100%;
-   top: 0;
 }
 .player__controls {
+   position: absolute;
+   bottom: 0;
    display: flex;
    flex-direction: row;
    align-items: center;
    justify-content: space-evenly;
    width: 100%;
-   height: 60px;
+   height: 10%;
    background-color: var(--color-black);
-   position: absolute;
-   bottom: 0;
 }
 .player__controls svg {
-   width: 40px;
-   height: 40px;
+   width: 20px;
    fill: gainsboro;
    transition: 1s;
 }
@@ -430,7 +425,7 @@ video {
 
 .progress {
    width: 70%;
-   height: 10px;
+   height: 6px;
    background-color: gainsboro;
 }
 .progress:hover {
@@ -447,7 +442,7 @@ video {
 .volume__slider {
    position: relative;
    width: 70%;
-   height: 10px;
+   height: 6px;
    background-color: gainsboro;
    cursor: e-resize;
 }
@@ -456,7 +451,7 @@ video {
    display: flex;
    flex-direction: row;
    width: 100%;
-   height: 10px;
+   height: 6px;
    background-color: var(--color-gold);
 }
 
@@ -465,7 +460,7 @@ video {
    display: flex;
    flex-direction: row;
    width: 0%;
-   height: 10px;
+   height: 6px;
    background-color: var(--color-gold);
 }
 .progress__filled::after,
@@ -474,8 +469,8 @@ video {
    position: absolute;
    right: -5px;
    top: -5px;
-   width: 20px;
-   height: 20px;
+   width: 15px;
+   height: 15px;
    border-radius: 50%;
    background-color: var(--color-white);
 }
@@ -924,6 +919,28 @@ video {
       width: 70px;
       height: 70px;
       margin-left: -5px;
+   }
+   .volume__slider {
+      height: 3px;
+   }
+   .volume__slider-filled {
+      height: 3px;
+   }
+
+   .progress__filled {
+      height: 3px;
+   }
+   .progress__filled::after,
+   .volume__slider-filled::after {
+      width: 7px;
+      height: 7px;
+      top: -2px;
+   }
+   .player__controls svg {
+      width: 10px;
+   }
+   .progress {
+      height: 3px;
    }
 
    /* price */
