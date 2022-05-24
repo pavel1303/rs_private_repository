@@ -149,4 +149,84 @@ function changeTheme(theme) {
    }
 
 }
+/*--------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------*/
+/*---------------------------------------Видео плеер------------------------------------*/
+/*--------------------------------------------------------------------------------------*/
+const play = document.querySelector('.play-pause');
+const volumeSlider = document.querySelector('.volume__slider');
+const volumeFill = document.querySelector('.volume__slider-filled')
+const volume = document.querySelector('.volume__button');
+const video = document.querySelector('video');
+const button = document.querySelector('.button__icon-player');
+const progress = document.querySelector('.progress')
+const progressBar = document.querySelector('.progress__filled');
+const videoPoster = document.querySelector('.video-player');
+let acctualVol = 0;
+
+
+function changeVolume() {
+   let acctualVol = event.offsetX / volumeSlider.clientWidth;
+   volumeFill.style.width = `${acctualVol * 100}%`
+   video.volume = acctualVol > 0.08 ? acctualVol : 0;
+   volume.childNodes[1].href.baseVal = acctualVol > 0.08 ? 'assets/svg/video/sprite.svg#volume' : 'assets/svg/video/sprite.svg#mute';
+}
+function skip(event) {
+   let acctualTime = event.offsetX / (progress.clientWidth / 100);
+   progressBar.style.width = `${acctualTime}%`;
+   video.currentTime = video.duration / 100 * acctualTime;
+}
+function firstPlayVideo() {
+   const videoPlayer = document.querySelector('.video-player-video');
+   videoPoster.style.height = 'auto';
+   videoPlayer.style.visibility = 'visible';
+   button.style.display = 'none';
+   play.childNodes[1].href.baseVal = 'assets/svg/video/sprite.svg#pause';
+   play.classList.remove('toggle');
+   video.play();
+}
+function playPauseToggle() {
+   if (play.classList.contains('toggle')) {
+      play.childNodes[1].href.baseVal = 'assets/svg/video/sprite.svg#pause';
+      play.classList.remove('toggle');
+      button.style.display = 'none';
+      video.play();
+   } else {
+      play.childNodes[1].href.baseVal = 'assets/svg/video/sprite.svg#play';
+      play.classList.add('toggle');
+      button.style.display = 'block';
+      video.pause();
+   }
+}
+function muteVolumeToggle() {
+   if (volume.classList.contains('toggle')) {
+      volume.childNodes[1].href.baseVal = 'assets/svg/video/sprite.svg#mute';
+      acctualVol = video.volume;
+      video.volume = 0;
+      volumeFill.style.width = `${video.volume * 100}%`
+      volume.classList.remove('toggle')
+   } else {
+      volume.childNodes[1].href.baseVal = 'assets/svg/video/sprite.svg#volume';
+      video.volume = acctualVol;
+      volumeFill.style.width = `${video.volume * 100}%`
+      volume.classList.add('toggle')
+   }
+}
+volumeSlider.addEventListener('click', changeVolume);
+video.addEventListener('timeupdate', () => {
+   progressBar.style.width = `${100 / video.duration * video.currentTime}%`
+})
+progress.addEventListener('click', skip);
+button.addEventListener('click', firstPlayVideo);
+play.addEventListener('click', playPauseToggle);
+volume.addEventListener('click', muteVolumeToggle);
+
+
 

@@ -344,6 +344,7 @@ a:hover {
 
 .portfolio {
    padding-top: 117px;
+   margin-bottom: 114px;
 }
 
 .portfolio__btns {
@@ -382,19 +383,105 @@ a:hover {
 
 /* video */
 
-.video {
-   padding-top: 114px;
-}
-
 .video-player {
-   display: flex;
-   justify-content: center;
-   align-items: center;
+   /* display: flex; */
+   position: relative;
+   /* justify-content: center;
+   align-items: center; */
    margin-top: 75px;
    max-width: 1400px;
    height: 705px;
    background-image: url("../assets/img/video-player.jpg");
+   background-size: cover;
+   border: 1px var(--color-gold) solid;
 }
+
+.video-player-video {
+   visibility: hidden;
+}
+video {
+   width: 100%;
+}
+.player__controls {
+   position: absolute;
+   bottom: 0;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: space-evenly;
+   width: 100%;
+   height: 10%;
+   background-color: var(--color-black);
+}
+.player__controls svg {
+   width: 20px;
+   fill: gainsboro;
+   transition: 1s;
+}
+.player__controls svg:hover {
+   cursor: pointer;
+   fill: var(--color-gold);
+}
+
+.progress {
+   width: 70%;
+   height: 6px;
+   background-color: gainsboro;
+}
+.progress:hover {
+   cursor: e-resize;
+}
+.player__volume {
+   width: 20%;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: space-around;
+}
+
+.volume__slider {
+   position: relative;
+   width: 70%;
+   height: 6px;
+   background-color: gainsboro;
+   cursor: e-resize;
+}
+.volume__slider-filled {
+   position: relative;
+   display: flex;
+   flex-direction: row;
+   width: 100%;
+   height: 6px;
+   background-color: var(--color-gold);
+}
+
+.progress__filled {
+   position: relative;
+   display: flex;
+   flex-direction: row;
+   width: 0%;
+   height: 6px;
+   background-color: var(--color-gold);
+}
+.progress__filled::after,
+.volume__slider-filled::after {
+   content: "";
+   position: absolute;
+   right: -5px;
+   top: -5px;
+   width: 15px;
+   height: 15px;
+   border-radius: 50%;
+   background-color: var(--color-white);
+}
+
+.button__icon-player {
+   position: absolute;
+   top: 45%;
+   left: 45%;
+   z-index: 1;
+}
+
 .icon-player {
    width: 130px;
    height: 130px;
@@ -832,6 +919,28 @@ a:hover {
       width: 70px;
       height: 70px;
       margin-left: -5px;
+   }
+   .volume__slider {
+      height: 3px;
+   }
+   .volume__slider-filled {
+      height: 3px;
+   }
+
+   .progress__filled {
+      height: 3px;
+   }
+   .progress__filled::after,
+   .volume__slider-filled::after {
+      width: 7px;
+      height: 7px;
+      top: -2px;
+   }
+   .player__controls svg {
+      width: 10px;
+   }
+   .progress {
+      height: 3px;
    }
 
    /* price */
