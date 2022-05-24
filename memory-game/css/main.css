@@ -1,0 +1,278 @@
+@import url("normalize.css");
+
+.body {
+   background-image: url("../assets/bg.jpg");
+   background-size: cover;
+   color: rgb(89, 180, 168);
+   font-size: 20px;
+}
+.header {
+   text-align: center;
+   text-shadow: 10px 10px 25px black;
+}
+.header-title {
+   margin-top: 0;
+   font-family: "Permanent Marker", cursive;
+   font-size: 45px;
+}
+.main {
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+}
+
+.score-title,
+.info-title {
+   font-family: "Permanent Marker", cursive;
+   text-shadow: 10px 10px 25px black;
+   font-size: 34px;
+}
+.info-title:first-child {
+   margin-right: 30px;
+}
+.score-table,
+.info-game {
+   font-family: "Padauk", sans-serif;
+   padding: 0 30px;
+}
+.attemps-span,
+.game-time-span {
+   font-size: 25px;
+   font-weight: 700;
+}
+
+.game {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   gap: 25px;
+   padding: 10px 50px 0px 50px;
+   max-width: 700px;
+   perspective: 1000px;
+}
+
+.mem-card {
+   position: relative;
+   width: 150px;
+   height: 100px;
+   background-color: rgb(89, 180, 168);
+   border: 1px solid black;
+   border-radius: 15px;
+   box-shadow: 10px 10px 15px black;
+   cursor: pointer;
+   transform: scale(1);
+   transform-style: preserve-3d;
+   transition: transform 0.5s;
+}
+
+.mem-card:active {
+   transform: scale(0.9);
+   transition: 0.4s;
+}
+.mem-card.flip {
+   transform: rotateY(180deg);
+   box-shadow: -10px 10px 15px black;
+}
+
+.back-img {
+   position: absolute;
+   left: 40px;
+   top: 5px;
+   max-width: 60px;
+   backface-visibility: hidden;
+   transform: rotateY(180deg);
+}
+
+.front-img {
+   position: absolute;
+   width: 80px;
+   top: 20px;
+   left: 35px;
+   backface-visibility: hidden;
+}
+img[src="assets/2.png"] {
+   top: 0;
+   max-width: 71px;
+}
+img[src="assets/4.png"],
+img[src="assets/5.png"] {
+   max-width: 75px;
+}
+img[src="assets/3.png"] {
+   max-width: 82px;
+   top: 0;
+}
+
+img[src="assets/7.png"] {
+   max-width: 69px;
+   top: 0;
+}
+img[src="assets/6.png"] {
+   max-width: 96px;
+}
+img[src="assets/8.png"] {
+   max-width: 98px;
+}
+
+.attemps,
+.game-time {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.reset {
+   width: 200px;
+   height: 40px;
+   background-color: rgb(89, 180, 168);
+   border: none;
+   border-radius: 10px;
+   box-shadow: 0px 10px 15px black;
+}
+.reset:active {
+   box-shadow: 0 5px 10px black;
+   transform: scale(0.96);
+}
+.reset:hover {
+   cursor: pointer;
+}
+
+.popup {
+   position: fixed;
+   visibility: hidden;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.5);
+   z-index: 500;
+}
+.popup.open {
+   visibility: visible;
+}
+.popup__body {
+   position: absolute;
+   top: 35%;
+   left: 35%;
+   width: 400px;
+   height: 200px;
+   background-color: rgb(89, 180, 168);
+   color: black;
+   border-radius: 15px;
+   border: 1px solid black;
+   box-shadow: 0px 0px 30px rgb(89, 180, 168);
+}
+.popup__content {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+.popup__title {
+   font-family: "Permanent Marker", cursive;
+}
+.popup__text {
+   font-family: "Permanent Marker", cursive;
+}
+.popup__res {
+   font-family: "Padauk", sans-serif;
+   font-size: 20px;
+}
+.popup__close {
+   margin-top: 20px;
+   width: 200px;
+   height: 40px;
+   background-color: rgb(7, 101, 163);
+   border: none;
+   border-radius: 10px;
+   box-shadow: 0px 10px 15px black;
+}
+.popup__snoop {
+   visibility: hidden;
+   width: 100%;
+   position: absolute;
+   left: -10%;
+   opacity: 0;
+}
+.popup__snoop.open {
+   visibility: visible;
+   opacity: 1;
+   transition: 3s;
+}
+.popup__thug {
+   width: 35%;
+   position: absolute;
+   top: -200%;
+   left: 8%;
+   transform: rotateY(180deg) rotateZ(35deg);
+}
+.popup__thug.open {
+   top: 25%;
+   transition: 6s;
+}
+
+.popup__close:active {
+   box-shadow: 0 5px 10px black;
+   transform: scale(0.96);
+}
+.popup__close:hover {
+   cursor: pointer;
+}
+
+.footer {
+   margin-top: 10px;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   gap: 0 100px;
+}
+.footer__img {
+   width: 80px;
+}
+
+.footer__text {
+   font-family: "Permanent Marker", cursive;
+   font-size: 40px;
+   font-weight: 700;
+   text-shadow: 10px 10px 25px black;
+   color: rgb(89, 180, 168);
+}
+@media screen and (max-width: 1024px) {
+   .popup__thug.open {
+      top: 18%;
+   }
+}
+
+@media screen and (max-width: 940px) {
+   .main {
+      flex-direction: column;
+      align-items: center;
+   }
+   .game {
+      padding: 0 10px;
+      order: 0;
+   }
+   .info-game {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 0 15px;
+   }
+   .attemps {
+      order: 1;
+   }
+   .score-table {
+      order: 3;
+   }
+   .reset {
+      order: 3;
+   }
+   .popup__thug.open {
+      top: 16%;
+   }
+}
+
+@media screen and (max-width: 769px) {
+   .popup__thug.open {
+      top: 13%;
+   }
+}

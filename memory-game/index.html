@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/main.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Padauk&family=Permanent+Marker&display=swap" rel="stylesheet">
+   <title>Snoop Mem-cards</title>
+   <link rel="shortcut icon" type="image/png" href="assets/thug.png">
+</head>
+
+<body class="body">
+   <div class="popup">
+      <div class="popup__img">
+         <img class="popup__snoop" src="assets/win.png" alt="Snoop">
+         <img class="popup__thug" src="assets/thug.png" alt="Thug">
+      </div>
+      <div class="popup__body">
+         <div class="popup__content">
+            <div class="popup__title">
+               <h2>Yo! You win!</h2>
+            </div>
+            <div class="popup__text">
+               Your results: <span class="popup__res"></span>
+
+            </div>
+            <button class="popup__close">New Game</button>
+         </div>
+      </div>
+   </div>
+   <audio src="assets/music/music.mp3" class="win"></audio>
+   <header class="header">
+      <h1 class="header-title">Snoop Dogg Memory Game</h1>
+   </header>
+   <main class="main">
+
+      <section class="score-table">
+         <h2 class="score-title">Score table</h2>
+         <ol>
+            <li class="table-row">-------</li>
+            <li class="table-row">-------</li>
+            <li class="table-row">-------</li>
+            <li class="table-row">-------</li>
+            <li class="table-row">-------</li>
+            <li class="table-row">-------</li>
+            <li class="table-row">-------</li>
+            <li class="table-row">-------</li>
+            <li class="table-row">-------</li>
+            <li class="table-row">-------</li>
+
+         </ol>
+      </section>
+      <section class="game">
+         <div class="mem-card" data-snoop="1">
+            <img class="back-img" src="assets/1.png" alt="Back img">
+            <img class="front-img" src="assets/front.png" alt="Front img">
+         </div>
+         <div class="mem-card" data-snoop="2">
+            <img class="back-img" src="assets/2.png" alt="Back img">
+            <img class="front-img" src="assets/front.png" alt="Front img">
+         </div>
+         <div class="mem-card" data-snoop="3">
+            <img class="back-img" src="assets/3.png" alt="Back img">
+            <img class="front-img" src="assets/front.png" alt="Front img">
+         </div>
+         <div class="mem-card" data-snoop="4">
+            <img class="back-img" src="assets/4.png" alt="Back img">
+            <img class="front-img" src="assets/front.png" alt="Front img">
+         </div>
+         <div class="mem-card" data-snoop="5">
+            <img class="back-img" src="assets/5.png" alt="Back img">
+            <img class="front-img" src="assets/front.png" alt="Front img">
+         </div>
+         <div class="mem-card" data-snoop="6">
+            <img class="back-img" src="assets/6.png" alt="Back img">
+            <img class="front-img" src="assets/front.png" alt="Front img">
+         </div>
+         <div class="mem-card" data-snoop="7">
+            <img class="back-img" src="assets/7.png" alt="Back img">
+            <img class="front-img" src="assets/front.png" alt="Front img">
+         </div>
+         <div class="mem-card" data-snoop="8">
+            <img class="back-img" src="assets/8.png" alt="Back img">
+            <img class="front-img" src="assets/front.png" alt="Front img">
+         </div>
+         <div class="mem-card" data-snoop="1">
+            <img class="back-img" src="assets/1.png" alt="Back img">
+            <img class="front-img" src="assets/front.png" alt="Front img">
+         </div>
+         <div class="mem-card" data-snoop="2">
+            <img class="back-img" src="assets/2.png" alt="Back img">
+            <img class="front-img" src="assets/front.png" alt="Front img">
+         </div>
+         <div class="mem-card" data-snoop="3">
+            <img class="back-img" src="assets/3.png" alt="Back img">
+            <img class="front-img" src="assets/front.png" alt="Front img">
+         </div>
+         <div class="mem-card" data-snoop="4">
+            <img class="back-img" src="assets/4.png" alt="Back img">
+            <img class="front-img" src="assets/front.png" alt="Front img">
+         </div>
+         <div class="mem-card" data-snoop="5">
+            <img class="back-img" src="assets/5.png" alt="Back img">
+            <img class="front-img" src="assets/front.png" alt="Front img">
+         </div>
+         <div class="mem-card" data-snoop="6">
+            <img class="back-img" src="assets/6.png" alt="Back img">
+            <img class="front-img" src="assets/front.png" alt="Front img">
+         </div>
+         <div class="mem-card" data-snoop="7">
+            <img class="back-img" src="assets/7.png" alt="Back img">
+            <img class="front-img" src="assets/front.png" alt="Front img">
+         </div>
+         <div class="mem-card" data-snoop="8">
+            <img class="back-img" src="assets/8.png" alt="Back img">
+            <img class="front-img" src="assets/front.png" alt="Front img">
+         </div>
+      </section>
+      <section class="info-game">
+         <div class="attemps">
+            <h2 class="info-title">Attempts:</h2>
+            <span class="attemps-span">0</span>
+         </div>
+         <div class="game-time">
+            <h2 class="info-title">Time: </h2>
+            <span class="game-time-span"><time>00:00</time></span>
+         </div>
+         <button class="reset">Reset</button>
+      </section>
+
+
+
+   </main>
+   <footer class="footer">
+      <a href="https://github.com/pavel1303"><img class="footer__img" src="assets/github.svg" alt="Github"></a>
+      <div class="footer__text">2022</div>
+      <a href="https://rs.school/js/"><img class="footer__img" src="assets/rs_school_js.svg" alt="RSS"></a>
+   </footer>
+   <script src="js/index.js"></script>
+</body>
+
+</html>
